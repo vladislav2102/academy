@@ -40,6 +40,7 @@ public class Task3 {
 		for (File f : arrayFile) {
 			try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
 				User u = (User) ois.readObject();
+				ois.close();
 				System.out.println(u);
 			} catch (IOException | ClassNotFoundException e) {
 				System.out.println(e.getMessage());
